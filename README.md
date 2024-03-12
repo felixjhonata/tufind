@@ -34,6 +34,6 @@ Clone projek dari github ke lokal
 
 Sekarang project `tufind` telah berhasil anda pindahkan ke perangkat anda. Namun, sekarang terdapat folder `tufind` di dalam folder project `tufind` yang telah anda buat. Untuk memudahkan anda dalam mengikuti instruksi kedepannya, folder projek `tufind` yang telah anda buat akan disebut **folder-1** dan folder projek `tufind` yang ada di dalam folder-1 akan disebut **folder-2.** 
 
-Pindahkan semua file yang ada di **folder-2** ke **folder-1**, jika terdapat peringatan `duplicate file` atau sejenisnya, pilih opsi `Replace file in destination`.
+Pindahkan semua file yang ada di **folder-2** ke **folder-1**, jika terdapat peringatan `Duplicated file` atau sejenisnya, pilih opsi `Replace file in destination`.
 
 Selesai.
