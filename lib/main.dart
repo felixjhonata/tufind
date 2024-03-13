@@ -15,9 +15,13 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Montserrat',
         useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xff16558F),
+          primary: const Color(0xff16558F),
+          secondary: const Color(0xff0583D2),
+        ),
       ),
-      home: const LoginOrRegisterPage(),
+      home: LoginOrRegisterPage(),
     );
   }
 }

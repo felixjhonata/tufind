@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tufind/Components/BarButton.dart';
 
 class LoginOrRegisterPage extends StatelessWidget {
   const LoginOrRegisterPage({super.key});
-
-  final lightBlue = const Color(0xff0583D2);
-  final darkBlue = const Color(0xff16558F);
 
   void toHelp() {
     // TODO: Go to help page
@@ -21,9 +19,13 @@ class LoginOrRegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var lightBlue = Theme.of(context).colorScheme.secondary;
+    var darkBlue = Theme.of(context).colorScheme.primary;
+
     return Scaffold(
       body: Stack(
         children: [
+          // Background
           Positioned(
             top: -150,
             left: MediaQuery.of(context).size.width / 2 - 150,
@@ -34,11 +36,13 @@ class LoginOrRegisterPage extends StatelessWidget {
             left: MediaQuery.of(context).size.width / 2 - 100,
             child: SvgPicture.asset("assets\\images\\vector-2.svg"),
           ),
+
+          // Body
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 100),
+                const SizedBox(height: 120),
 
                 // TUFIND Logo
                 SvgPicture.asset(
@@ -46,48 +50,31 @@ class LoginOrRegisterPage extends StatelessWidget {
                   width: 200,
                 ),
                 const SizedBox(height: 10),
-                getTitle(),
+
+                // Title
+                getTitle(darkBlue, lightBlue),
 
                 const SizedBox(height: 100),
 
                 // Having troubles?
-                link(toHelp),
+                link(toHelp, lightBlue),
 
                 const SizedBox(height: 20),
 
                 // Login Button
-                makeButton(
-                  "LOGIN",
-                  BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: lightBlue,
-                  ),
-                  const TextStyle(
-                    fontSize: 15,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  toLogin,
+                BarButton(
+                  label: "LOGIN",
+                  isFill: true,
+                  onTap: toLogin,
                 ),
 
                 const SizedBox(height: 10),
 
                 // Register Button
-                makeButton(
-                  "REGISTER",
-                  BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.transparent,
-                    border: Border.all(
-                      color: lightBlue,
-                    ),
-                  ),
-                  TextStyle(
-                    fontSize: 15,
-                    color: lightBlue,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  toRegister,
+                BarButton(
+                  label: "REGISTER",
+                  isFill: false,
+                  onTap: toRegister,
                 ),
               ],
             ),
@@ -97,24 +84,7 @@ class LoginOrRegisterPage extends StatelessWidget {
     );
   }
 
-  Widget makeButton(
-      String label, BoxDecoration decoration, TextStyle style, var onTap) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 300,
-        padding: const EdgeInsets.all(15),
-        decoration: decoration,
-        alignment: Alignment.center,
-        child: Text(
-          label,
-          style: style,
-        ),
-      ),
-    );
-  }
-
-  Widget link(var onTap) {
+  Widget link(var onTap, var lightBlue) {
     return GestureDetector(
       onTap: onTap,
       child: Text(
@@ -128,7 +98,7 @@ class LoginOrRegisterPage extends StatelessWidget {
     );
   }
 
-  Widget getTitle() {
+  Widget getTitle(var darkBlue, var lightBlue) {
     double? brandNameSize = 45;
     double? taglineSize = 18;
 
