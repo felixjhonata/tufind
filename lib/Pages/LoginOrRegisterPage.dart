@@ -42,7 +42,7 @@ class LoginOrRegisterPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 120),
+                const SizedBox(height: 130),
 
                 // TUFIND Logo
                 SvgPicture.asset(
@@ -54,7 +54,7 @@ class LoginOrRegisterPage extends StatelessWidget {
                 // Title
                 getTitle(darkBlue, lightBlue),
 
-                const SizedBox(height: 100),
+                const SizedBox(height: 80),
 
                 // Having troubles?
                 link(toHelp, lightBlue),
