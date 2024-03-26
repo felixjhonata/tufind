@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tufind/Components/BarButton.dart';
+import 'package:tufind/Pages/LoginPage.dart';
 
 class LoginOrRegisterPage extends StatelessWidget {
   const LoginOrRegisterPage({super.key});
 
-  void toHelp() {
+  void toHelp(BuildContext context) {
     // TODO: Go to help page
   }
 
-  void toLogin() {
+  void toLogin(BuildContext context) {
     // TODO: Go to login page
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const LoginPage(),
+        ));
   }
 
-  void toRegister() {
+  void toRegister(BuildContext context) {
     // TODO: Go to register page
   }
 
@@ -38,57 +44,59 @@ class LoginOrRegisterPage extends StatelessWidget {
           ),
 
           // Body
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(height: 130),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 130),
 
-                // TUFIND Logo
-                SvgPicture.asset(
-                  "assets\\images\\TuFind_Logo.svg",
-                  width: 200,
-                ),
-                const SizedBox(height: 10),
+              // TUFIND Logo
+              SvgPicture.asset(
+                "assets\\images\\TuFind_Logo.svg",
+                width: 200,
+              ),
+              const SizedBox(height: 10),
 
-                // Title
-                getTitle(darkBlue, lightBlue),
+              // Title
+              getTitle(darkBlue, lightBlue),
 
-                const SizedBox(height: 80),
+              const SizedBox(height: 80),
 
-                // Having troubles?
-                link(toHelp, lightBlue),
+              // Having troubles?
+              link(
+                "Having troubles?",
+                () => toHelp(context),
+                lightBlue,
+              ),
 
-                const SizedBox(height: 20),
+              const SizedBox(height: 20),
 
-                // Login Button
-                BarButton(
-                  label: "LOGIN",
-                  isFill: true,
-                  onTap: toLogin,
-                ),
+              // Login Button
+              BarButton(
+                label: "LOGIN",
+                isFill: true,
+                onTap: () => toLogin(context),
+              ),
 
-                const SizedBox(height: 10),
+              const SizedBox(height: 10),
 
-                // Register Button
-                BarButton(
-                  label: "REGISTER",
-                  isFill: false,
-                  onTap: toRegister,
-                ),
-              ],
-            ),
+              // Register Button
+              BarButton(
+                label: "REGISTER",
+                isFill: false,
+                onTap: () => toRegister(context),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 
-  Widget link(var onTap, var lightBlue) {
+  Widget link(var text, var onTap, var lightBlue) {
     return GestureDetector(
       onTap: onTap,
       child: Text(
-        "Having troubles?",
+        text,
         style: TextStyle(
           color: lightBlue,
           decoration: TextDecoration.underline,
