@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class BarButton extends StatelessWidget {
+class MyBarButton extends StatelessWidget {
   final String label;
   final bool isFill;
   final Function()? onTap;
 
-  const BarButton({
+  const MyBarButton({
     super.key,
     required this.label,
     required this.isFill,

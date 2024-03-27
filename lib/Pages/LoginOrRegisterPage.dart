@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tufind/Components/BarButton.dart';
+import 'package:tufind/Components/MyBarButton.dart';
 import 'package:tufind/Pages/LoginPage.dart';
 
 class LoginOrRegisterPage extends StatelessWidget {
@@ -71,7 +71,7 @@ class LoginOrRegisterPage extends StatelessWidget {
               const SizedBox(height: 20),
 
               // Login Button
-              BarButton(
+              MyBarButton(
                 label: "LOGIN",
                 isFill: true,
                 onTap: () => toLogin(context),
@@ -80,7 +80,7 @@ class LoginOrRegisterPage extends StatelessWidget {
               const SizedBox(height: 10),
 
               // Register Button
-              BarButton(
+              MyBarButton(
                 label: "REGISTER",
                 isFill: false,
                 onTap: () => toRegister(context),

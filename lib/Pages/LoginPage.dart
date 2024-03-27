@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tufind/Components/MyBackButton.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
-
-  void back(BuildContext context) {
-    Navigator.pop(context);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,33 +25,8 @@ class LoginPage extends StatelessWidget {
             child: SvgPicture.asset("assets\\images\\vector-2.svg"),
           ),
 
-          // Button
-          Positioned(
-            top: 100,
-            left: 50,
-            child: GestureDetector(
-              onTap: () => back(context),
-              child: Container(
-                width: 60,
-                height: 60,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey[500]!,
-                      offset: Offset.zero,
-                      blurRadius: 15.0,
-                    ),
-                  ],
-                ),
-                child: const Icon(
-                  Icons.arrow_back_rounded,
-                  size: 30,
-                ),
-              ),
-            ),
-          ),
+          // Back Button
+          const MyBackButton(),
 
           // Body
           Column(
