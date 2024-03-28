@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 class MyPasswordField extends StatefulWidget {
   final Color color;
+  final TextEditingController controller;
 
-  const MyPasswordField({super.key, required this.color});
+  const MyPasswordField(
+      {super.key, required this.color, required this.controller});
 
   @override
   State<MyPasswordField> createState() => _MyPasswordFieldState();

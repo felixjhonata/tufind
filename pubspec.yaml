@@ -24,6 +24,7 @@ flutter:
     - assets\images\TuFind_Logo-white.svg
     - assets\images\vector-1.svg
     - assets\images\vector-2.svg
+    - assets\images\Separator.svg
 
   fonts:
     - family: Montserrat

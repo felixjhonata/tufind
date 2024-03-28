@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
   final Color color;
+  final TextEditingController controller;
 
-  const MyTextField({super.key, required this.color});
+  const MyTextField({super.key, required this.color, required this.controller});
 
   @override
   Widget build(BuildContext context) {

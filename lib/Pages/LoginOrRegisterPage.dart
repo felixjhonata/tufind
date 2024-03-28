@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tufind/Components/MyLink.dart';
 import 'package:tufind/Components/MyBarButton.dart';
 import 'package:tufind/Pages/LoginPage.dart';
 
@@ -62,10 +63,10 @@ class LoginOrRegisterPage extends StatelessWidget {
               const SizedBox(height: 80),
 
               // Having troubles?
-              link(
-                "Having troubles?",
-                () => toHelp(context),
-                lightBlue,
+              MyLink(
+                text: "Having troubles?",
+                onTap: () => toHelp(context),
+                color: lightBlue,
               ),
 
               const SizedBox(height: 20),
@@ -88,20 +89,6 @@ class LoginOrRegisterPage extends StatelessWidget {
             ],
           ),
         ],
-      ),
-    );
-  }
-
-  Widget link(var text, var onTap, var lightBlue) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Text(
-        text,
-        style: TextStyle(
-          color: lightBlue,
-          decoration: TextDecoration.underline,
-          decorationColor: lightBlue,
-        ),
       ),
     );
   }

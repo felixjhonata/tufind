@@ -38,7 +38,7 @@ class MyBarButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 300,
+        width: MediaQuery.of(context).size.width * 80 / 100,
         padding: const EdgeInsets.all(15),
         decoration: decoration,
         alignment: Alignment.center,
