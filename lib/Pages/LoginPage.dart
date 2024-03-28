@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tufind/Components/MyBackButton.dart';
+import 'package:tufind/Components/MyPasswordField.dart';
+import 'package:tufind/Components/MyTextField.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -63,6 +65,18 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 15),
+
+              // Username Field
+              MyTextField(color: lightBlue),
+              const SizedBox(height: 10),
+
+              // Password Field
+              MyPasswordField(color: lightBlue),
+
+              // Bar Button
+              // Forgot Password?
+              // To Register Page
             ],
           ),
         ],
