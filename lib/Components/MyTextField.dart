@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
   final Color color;
+  final String text;
+  final IconData icon;
   final TextEditingController controller;
 
-  const MyTextField({super.key, required this.color, required this.controller});
+  const MyTextField(
+      {super.key,
+      required this.color,
+      required this.controller,
+      required this.text,
+      required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +20,9 @@ class MyTextField extends StatelessWidget {
           horizontal: MediaQuery.of(context).size.width * 10 / 100),
       child: TextField(
         decoration: InputDecoration(
-          hintText: "Email / Phone No.",
+          hintText: text,
           prefixIcon: Icon(
-            Icons.account_box_rounded,
+            icon,
             color: color,
           ),
           border: OutlineInputBorder(
