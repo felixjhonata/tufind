@@ -3,20 +3,18 @@ import 'package:flutter/material.dart';
 class MyBackButton extends StatelessWidget {
   const MyBackButton({super.key});
 
-  void back(BuildContext context) {
-    Navigator.pop(context);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Positioned(
       top: 80,
       left: 35,
       child: GestureDetector(
-        onTap: () => back(context),
+        excludeFromSemantics: true,
+        onTap: () => Navigator.pop(context),
         child: Container(
           width: 60,
           height: 60,
+          alignment: Alignment.center,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white,
