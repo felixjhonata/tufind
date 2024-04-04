@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tufind/Components/MyLink.dart';
 import 'package:tufind/Components/MyBarButton.dart';
 import 'package:tufind/Pages/LoginPage.dart';
+import 'package:tufind/Pages/RegisterPage.dart';
 
 class LoginOrRegisterPage extends StatelessWidget {
   const LoginOrRegisterPage({super.key});
@@ -22,6 +23,11 @@ class LoginOrRegisterPage extends StatelessWidget {
 
   void toRegister(BuildContext context) {
     // TODO: Go to register page
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const RegisterPage(),
+        ));
   }
 
   @override

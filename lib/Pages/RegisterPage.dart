@@ -1,46 +1,39 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:tufind/Components/MyBackButton.dart';
 import 'package:tufind/Components/MyBarButton.dart';
+import 'package:tufind/Components/MyCheckBox.dart';
 import 'package:tufind/Components/MyLink.dart';
 import 'package:tufind/Components/MyPasswordField.dart';
 import 'package:tufind/Components/MyTextField.dart';
-import 'package:tufind/Pages/RegisterPage.dart';
+import 'package:tufind/Pages/LoginPage.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
-  loginToggle() {
-    // TODO: Validate Login and Navigate to home page
-  }
-
-  forgotPass() {
-    // TODO: Forgot Password
-  }
-
-  toRegister(BuildContext context) {
-    // TODO: To Register Page
+  toLogin(BuildContext context) {
     Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const RegisterPage(),
-      ),
-    );
+        context,
+        MaterialPageRoute(
+          builder: (context) => const LoginPage(),
+        ));
   }
 
-  back(BuildContext context) {
-    Navigator.pop(context);
-  }
+  registerToggle() {}
+
+  toTermsAndConditions() {}
 
   @override
   Widget build(BuildContext context) {
     var lightBlue = Theme.of(context).colorScheme.secondary;
     var darkBlue = Theme.of(context).colorScheme.primary;
 
+    TextEditingController nameController = TextEditingController();
+    TextEditingController phoneController = TextEditingController();
     TextEditingController emailController = TextEditingController();
     TextEditingController passController = TextEditingController();
+    TextEditingController confirmPassController = TextEditingController();
 
     return Scaffold(
       body: Stack(
@@ -56,18 +49,16 @@ class LoginPage extends StatelessWidget {
                 ),
                 Positioned(
                   left: -50,
-                  top: MediaQuery.of(context).size.height * 90 / 100,
+                  top: MediaQuery.of(context).size.height * 112 / 100,
                   child: SvgPicture.asset("assets\\images\\vector-2.svg"),
                 ),
 
                 // Body
-                SizedBox(
-                  height: MediaQuery.of(context).size.height,
+                Center(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(height: 50),
+                      const SizedBox(height: 130),
 
                       // Logo
                       SvgPicture.asset(
@@ -81,7 +72,7 @@ class LoginPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "LOG",
+                            "REGI",
                             style: TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w800,
@@ -90,7 +81,7 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "IN",
+                            "STER",
                             style: TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w800,
@@ -102,12 +93,30 @@ class LoginPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 15),
 
-                      // Username Field
+                      // Name Field
+                      MyTextField(
+                        color: lightBlue,
+                        controller: nameController,
+                        text: "Full Name",
+                        icon: Icons.person,
+                      ),
+                      const SizedBox(height: 10),
+
+                      // Email Field
                       MyTextField(
                         color: lightBlue,
                         controller: emailController,
-                        text: "Email / Phone No.",
-                        icon: Icons.account_box_rounded,
+                        text: "Email (Optional)",
+                        icon: Icons.mail,
+                      ),
+                      const SizedBox(height: 10),
+
+                      // Phone No. Field
+                      MyTextField(
+                        color: lightBlue,
+                        controller: phoneController,
+                        text: "Phone No.",
+                        icon: Icons.phone,
                       ),
                       const SizedBox(height: 10),
 
@@ -117,6 +126,29 @@ class LoginPage extends StatelessWidget {
                         color: lightBlue,
                         controller: passController,
                       ),
+                      const SizedBox(height: 10),
+
+                      // Password Field
+                      MyPasswordField(
+                        text: "Confirm Password",
+                        color: lightBlue,
+                        controller: confirmPassController,
+                      ),
+                      const SizedBox(height: 15),
+
+                      // Agree to the terms and conditions
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const MyCheckBox(),
+                          const Text("I agree to the "),
+                          MyLink(
+                              onTap: toTermsAndConditions,
+                              text: "Terms and Conditions",
+                              color: lightBlue),
+                          const SizedBox(width: 20),
+                        ],
+                      ),
                       const SizedBox(height: 15),
 
                       // Separator
@@ -125,23 +157,20 @@ class LoginPage extends StatelessWidget {
 
                       // Bar Button
                       MyBarButton(
-                          label: "LOGIN", isFill: true, onTap: loginToggle),
-                      const SizedBox(height: 30),
-
-                      // Forgot Password?
-                      MyLink(
-                          onTap: forgotPass,
-                          text: "Forgot Password?",
-                          color: lightBlue),
-                      const SizedBox(height: 50),
+                          label: "REGISTER",
+                          isFill: true,
+                          onTap: registerToggle),
+                      const SizedBox(height: 80),
 
                       // To Register Page
-                      const Text("Doesn't have an account yet?"),
+                      const Text("Already have an account?"),
                       const SizedBox(height: 5),
                       MyLink(
-                          onTap: () => toRegister(context),
-                          text: "Register here",
+                          onTap: () => toLogin(context),
+                          text: "Login Here",
                           color: lightBlue),
+
+                      const SizedBox(height: 50),
                     ],
                   ),
                 ),
