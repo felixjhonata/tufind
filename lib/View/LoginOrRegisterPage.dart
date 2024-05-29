@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tufind/Components/MyLink.dart';
-import 'package:tufind/Components/MyBarButton.dart';
-import 'package:tufind/Pages/LoginPage.dart';
-import 'package:tufind/Pages/RegisterPage.dart';
+import 'package:tufind/Model/MyLink.dart';
+import 'package:tufind/Model/MyBarButton.dart';
+import 'package:tufind/View/LoginPage.dart';
+import 'package:tufind/View/RegisterPage.dart';
 
 class LoginOrRegisterPage extends StatelessWidget {
   const LoginOrRegisterPage({super.key});

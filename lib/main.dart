@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tufind/Pages/LoginOrRegisterPage.dart';
+import 'package:tufind/View/LoginOrRegisterPage.dart';
 
 void main() {
   runApp(const MainApp());

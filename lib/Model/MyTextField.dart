@@ -19,6 +19,7 @@ class MyTextField extends StatelessWidget {
       padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * 10 / 100),
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           hintText: text,
           prefixIcon: Icon(

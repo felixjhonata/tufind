@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tufind/Components/MyBackButton.dart';
-import 'package:tufind/Components/MyBarButton.dart';
-import 'package:tufind/Components/MyCheckBox.dart';
-import 'package:tufind/Components/MyLink.dart';
-import 'package:tufind/Components/MyPasswordField.dart';
-import 'package:tufind/Components/MyTextField.dart';
-import 'package:tufind/Pages/LoginPage.dart';
+import 'package:tufind/Model/MyBackButton.dart';
+import 'package:tufind/Model/MyBarButton.dart';
+import 'package:tufind/Model/MyCheckBox.dart';
+import 'package:tufind/Model/MyLink.dart';
+import 'package:tufind/Model/MyPasswordField.dart';
+import 'package:tufind/Model/MyTextField.dart';
+import 'package:tufind/View/LoginPage.dart';
+import 'package:tufind/Controllers/RegisterController.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -20,7 +20,40 @@ class RegisterPage extends StatelessWidget {
         ));
   }
 
-  registerToggle() {}
+  registerToggle(BuildContext context, String name, String email, String pass,
+      String confirmPass) {
+    // TODO: Validate Register and Navigate to home page
+    print("name ${name}");
+
+    if (pass == confirmPass) {
+      showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          content: CircularProgressIndicator(),
+        ),
+      );
+
+      RegisterService.register(name, email, pass).then(
+        (value) {
+          Navigator.pop(context);
+          if (value.statusCode == 200) {
+            print(value.body);
+          } else {
+            print("error ${value.statusCode}");
+          }
+        },
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          title: Text("Invalid Input"),
+          content: Text(
+              "Password doesn't match in Password field and Confirm Password Field"),
+        ),
+      );
+    }
+  }
 
   toTermsAndConditions() {}
 
@@ -157,9 +190,18 @@ class RegisterPage extends StatelessWidget {
 
                       // Bar Button
                       MyBarButton(
-                          label: "REGISTER",
-                          isFill: true,
-                          onTap: registerToggle),
+                        label: "REGISTER",
+                        isFill: true,
+                        onTap: () {
+                          registerToggle(
+                            context,
+                            nameController.text,
+                            emailController.text,
+                            passController.text,
+                            confirmPassController.text,
+                          );
+                        },
+                      ),
                       const SizedBox(height: 80),
 
                       // To Register Page

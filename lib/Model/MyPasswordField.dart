@@ -6,7 +6,10 @@ class MyPasswordField extends StatefulWidget {
   final String text;
 
   const MyPasswordField(
-      {super.key, required this.color, required this.controller, required this.text});
+      {super.key,
+      required this.color,
+      required this.controller,
+      required this.text});
 
   @override
   State<MyPasswordField> createState() => _MyPasswordFieldState();
@@ -27,6 +30,7 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
       padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * 10 / 100),
       child: TextField(
+        controller: widget.controller,
         obscureText: obscureText,
         decoration: InputDecoration(
           hintText: widget.text,

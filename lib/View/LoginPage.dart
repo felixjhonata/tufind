@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tufind/Components/MyBackButton.dart';
-import 'package:tufind/Components/MyBarButton.dart';
-import 'package:tufind/Components/MyLink.dart';
-import 'package:tufind/Components/MyPasswordField.dart';
-import 'package:tufind/Components/MyTextField.dart';
-import 'package:tufind/Pages/RegisterPage.dart';
+import 'package:tufind/Model/MyBackButton.dart';
+import 'package:tufind/Model/MyBarButton.dart';
+import 'package:tufind/Model/MyLink.dart';
+import 'package:tufind/Model/MyPasswordField.dart';
+import 'package:tufind/Model/MyTextField.dart';
+import 'package:tufind/View/RegisterPage.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
