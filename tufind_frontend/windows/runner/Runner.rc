@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "tufind_frontend" "\0"
+            VALUE "CompanyName", "TuFind Co., Ltd." "\0"
+            VALUE "FileDescription", "TuFind" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "tufind_frontend" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "tufind_frontend.exe" "\0"
-            VALUE "ProductName", "tufind_frontend" "\0"
+            VALUE "InternalName", "TuFind" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 TuFind Co., Ltd. All rights reserved." "\0"
+            VALUE "OriginalFilename", "TuFind.exe" "\0"
+            VALUE "ProductName", "TuFind" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

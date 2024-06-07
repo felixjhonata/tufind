@@ -38,6 +38,13 @@ dependencies:
   flutter_svg: ^2.0.10+1
   http: ^1.2.1
   flutter_native_splash: ^2.4.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  windows:
+    generate: true
+    image_path: assets\logo-white.png
+    icon_size: 256
 
 flutter_native_splash:
   color: "#16558F"
