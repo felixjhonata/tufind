@@ -6,7 +6,7 @@ TuFind is an innovative app designed to help students find the perfect tutor. Us
 
 ## Table of Contents
 
-- [Features](#feature)
+- [Feature](#feature)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
