@@ -1,6 +1,15 @@
+![Tufind Logo](README_banner.png)
+
 # TuFind
 
 TuFind is an innovative app designed to help students find the perfect tutor. Using a unique bidding mechanism, the price for tutoring services is determined dynamically, ensuring fair pricing and a competitive market. The app features a user-friendly frontend built with Flutter and a robust backend developed using Golang.
+
+## Table of Contents
+
+- [Features](#feature)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
 
 ## Feature
 
