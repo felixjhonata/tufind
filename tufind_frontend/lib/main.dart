@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
       home: const LandingPage(),
     );
   }

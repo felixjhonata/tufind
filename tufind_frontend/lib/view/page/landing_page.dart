@@ -16,13 +16,19 @@ class LandingPage extends StatelessWidget {
         children: [
           Positioned(
             top: -150,
-            left: 50,
-            child: SvgPicture.asset("assets/background-asset-1.svg"),
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Center(
+                  child: SvgPicture.asset("assets/background-asset-1.svg")),
+            ),
           ),
           Positioned(
             bottom: -80,
-            left: 120,
-            child: SvgPicture.asset("assets/background-asset-2.svg"),
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Center(
+                  child: SvgPicture.asset("assets/background-asset-2.svg")),
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,

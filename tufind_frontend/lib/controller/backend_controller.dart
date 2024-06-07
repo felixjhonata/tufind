@@ -4,8 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:tufind_frontend/model/user.dart';
 
 class BackendController {
-  static const String host = "http://10.0.2.2:8080/";
-  // static const String host = "http://10.34.146.216:8080/";
+  // static const String host = "http://10.0.2.2:8080/";
+  static const String host = "http://localhost:8080/";
 
   static Map<String, String> getHeader() {
     return {

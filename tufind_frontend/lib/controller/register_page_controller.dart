@@ -87,8 +87,7 @@ class RegisterPageController {
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
         insetPadding: EdgeInsets.symmetric(horizontal: 180),
-        child: SizedBox(
-          height: 50,
+        child: Center(
           child: CircularProgressIndicator(
             color: Colors.white,
           ),
